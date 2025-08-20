@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bab I - Pengembangan Filter Rokok</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e6f7ff, #ffffff);
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #003366, #0055aa);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    header h1:hover {
+      color: #ffdd57;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    main {
+      margin-top: 100px;
+      padding: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: #004080;
+      cursor: pointer;
+      user-select: none;
+      background: #e6f0ff;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    h2:hover {
+      background: #cce0ff;
+    }
+
+    .content {
+      display: none;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: #ffdd57;
+      text-decoration: none;
+    }
+
+    /* Dekorasi biologi (daun hijau melayang) */
+    .leaf {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: #4CAF50;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 10s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0) rotate(0deg);}
+      100% {transform: translateY(-100vh) rotate(360deg);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="man2.png" alt="Logo MAN 2 Kudus">
+    <div>
+      <h1>Pengembangan Filter Berbasis Bahan Alam untuk Menurunkan Kandungan Nikotin dan Tar pada Limbah Cair Rokok</h1>
+      <p>Oleh: Agha Mahanna Hadziq & Muhammad Zayyan Kamil Abdillah</p>
+    </div>
+  </header>
+
+  <main>
+    <h2 onclick="toggleContent('latar')">📘 Latar Belakang</h2>
+    <div id="latar" class="content">
+      <p>
+        Rokok merupakan salah satu produk tembakau yang paling banyak dikonsumsi di dunia, dan dampaknya terhadap kesehatan manusia sudah menjadi perhatian global. 
+        Selain bahaya bagi perokok aktif maupun pasif, rokok juga menghasilkan limbah yang dapat mencemari lingkungan. 
+        Salah satu bentuk limbah yang sering terabaikan adalah limbah cair rokok, yaitu cairan yang dihasilkan dari sisa puntung rokok yang terendam air. 
+        Cairan ini mengandung berbagai senyawa kimia berbahaya, di antaranya nikotin dan tar yang dapat merusak ekosistem perairan, membahayakan biota, 
+        serta berpotensi mencemari sumber air bersih (Novotny et al., 2009; Slaughter et al., 2011).
+      </p>
+      <p>
+        Nikotin adalah senyawa alkaloid yang bersifat adiktif dan beracun, sementara tar merupakan kumpulan zat kimia kompleks yang bersifat karsinogenik. 
+        Keberadaan kedua senyawa ini dalam limbah cair rokok menjadikannya ancaman serius bagi lingkungan apabila tidak dikelola dengan baik. 
+        Puntung rokok yang dibuang sembarangan ke saluran air dapat melepaskan racun hingga beberapa hari (Micevska et al., 2006).
+      </p>
+      <p>
+        Berdasarkan permasalahan tersebut, perlu adanya solusi inovatif yang ramah lingkungan untuk mengurangi kadar nikotin dan tar dalam limbah cair rokok. 
+        Salah satu upaya yang dapat dilakukan adalah dengan mengembangkan filter berbasis bahan alam. 
+        Bahan alam seperti arang aktif dari tempurung kelapa, zeolit, kulit pisang, maupun serat tumbuhan lain memiliki potensi sebagai penyerap (adsorben) alami 
+        yang efektif dalam menurunkan kandungan zat berbahaya (Almeida et al., 2018; Prajapati et al., 2020).
+      </p>
+      <p>
+        Penelitian ini berfokus pada pengembangan filter berbasis bahan alam sebagai upaya mitigasi pencemaran lingkungan akibat limbah cair rokok. 
+        Dengan memanfaatkan sumber daya yang melimpah di alam, diharapkan teknologi sederhana ini dapat memberikan solusi berkelanjutan dan aplikatif, 
+        sekaligus meningkatkan kesadaran masyarakat terhadap pentingnya menjaga kelestarian lingkungan (WHO, 2021).
+      </p>
+    </div>
+
+    <h2 onclick="toggleContent('rumusan')">❓ Rumusan Masalah</h2>
+    <div id="rumusan" class="content">
+      <p>Rumusan masalah dalam penelitian ini adalah:</p>
+      <ol>
+        <li>Bagaimana karakteristik kandungan nikotin dan tar pada limbah cair rokok?</li>
+        <li>Bagaimana efektivitas bahan alam tertentu dalam menyerap nikotin dan tar dari limbah cair rokok?</li>
+        <li>Bagaimana desain filter berbasis bahan alam yang optimal untuk menurunkan kadar nikotin dan tar?</li>
+      </ol>
+    </div>
+
+    <h2 onclick="toggleContent('tujuan')">🎯 Tujuan Penelitian</h2>
+    <div id="tujuan" class="content">
+      <ol>
+        <li>Menganalisis kandungan nikotin dan tar dalam limbah cair rokok.</li>
+        <li>Menguji efektivitas bahan alam sebagai filter penyerap nikotin dan tar.</li>
+        <li>Mengembangkan desain filter berbasis bahan alam yang aplikatif dan ramah lingkungan.</li>
+      </ol>
+    </div>
+
+    <h2 onclick="toggleContent('manfaat')">🌱 Manfaat Penelitian</h2>
+    <div id="manfaat" class="content">
+      <ul>
+        <li><b>Manfaat Teoretis:</b> Memberikan kontribusi dalam pengembangan ilmu pengetahuan khususnya di bidang biologi lingkungan dan teknologi ramah lingkungan.</li>
+        <li><b>Manfaat Praktis:</b> Menawarkan solusi aplikatif untuk mengurangi dampak pencemaran dari limbah cair rokok serta meningkatkan kesadaran masyarakat terhadap bahaya puntung rokok.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>Referensi:</p>
+    <p>
+      <a href="https://doi.org/10.1016/j.scitotenv.2008.10.023" target="_blank">Novotny et al., 2009</a> | 
+      <a href="https://doi.org/10.1016/j.ecoenv.2006.01.013" target="_blank">Micevska et al., 2006</a> | 
+      <a href="https://doi.org/10.1016/j.scitotenv.2011.05.036" target="_blank">Slaughter et al., 2011</a> | 
+      <a href="https://doi.org/10.1016/j.jenvman.2017.10.030" target="_blank">Almeida et al., 2018</a> | 
+      <a href="https://doi.org/10.1016/j.jclepro.2020.121473" target="_blank">Prajapati et al., 2020</a> | 
+      <a href="https://www.who.int/publications/i/item/9789240039924" target="_blank">WHO, 2021</a>
+    </p>
+    <p>&copy; 2025 Agha Mahanna Hadziq & Muhammad Zayyan Kamil Abdillah</p>
+  </footer>
+
+  <!-- Daun hijau melayang -->
+  <div class="leaf" style="left:10%; animation-delay:0s;"></div>
+  <div class="leaf" style="left:30%; animation-delay:3s;"></div>
+  <div class="leaf" style="left:60%; animation-delay:6s;"></div>
+  <div class="leaf" style="left:80%; animation-delay:9s;"></div>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
